@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Developer Cheatsheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Front-End Developer Cheatsheet</h1>
+            <p>HTML Tags + CSS Properties na kailangan mo lagi</p>
+        </header>
+
+        <!-- HEADINGS -->
+        <section>
+            <h2>1. HTML Headings <span class="badge">h1 - h6</span></h2>
+            <p>Ginagamit para sa hierarchy ng content. h1 = pinaka-important, h6 = least important.</p>
+            
+            <h3>Usage Guide:</h3>
+            <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Font Size</th>
+                    <th>Kailan Gamitin</th>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;h1&gt;</code></td>
+                    <td>2rem / 32px</td>
+                    <td>Main title ng page - dapat isa lang per page</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;h2&gt;</code></td>
+                    <td>1.75rem / 28px</td>
+                    <td>Major sections ng page</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;h3&gt;</code></td>
+                    <td>1.5rem / 24px</td>
+                    <td>Sub-sections</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;h4&gt;</code></td>
+                    <td>1.25rem / 20px</td>
+                    <td>Sub-sub sections</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;h5&gt;</code></td>
+                    <td>1.1rem / 17.6px</td>
+                    <td>Minor headings</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;h6&gt;</code></td>
+                    <td>1rem / 16px</td>
+                    <td>Pinaka-maliit, bihira gamitin</td>
+                </tr>
+            </table>
+
+            <h3>Live Demo:</h3>
+            <div class="demo-h1">This is H1 - Page Title</div>
+            <div class="demo-h2">This is H2 - Section Title</div>
+            <div class="demo-h3">This is H3 - Subsection</div>
+            <div class="demo-h4">This is H4</div>
+            <div class="demo-h5">This is H5</div>
+            <div class="demo-h6">This is H6</div>
+        </section>
+
+        <!-- PARAGRAPH -->
+        <section>
+            <h2>2. Paragraph <span class="badge">&lt;p&gt;</span></h2>
+            <p>Ginagamit para sa regular text content. Automatic may margin sa taas at baba.</p>
+            <pre><code>&lt;p&gt;Ito ay isang paragraph. Pwede mahaba 'to at mag-wrap automatically.&lt;/p&gt;</code></pre>
+            <p><strong>CSS Properties:</strong> <code class="inline-code">font-size</code>, <code class="inline-code">line-height</code>, <code class="inline-code">color</code>, <code class="inline-code">text-align</code>, <code class="inline-code">margin</code></p>
+        </section>
+
+        <!-- IMAGES -->
+        <section>
+            <h2>3. Images <span class="badge">&lt;img&gt;</span></h2>
+            <p>Para mag-display ng images. Self-closing tag siya.</p>
+            <pre><code>&lt;img src="image.jpg" alt="Description" width="300" height="200"&gt;</code></pre>
+            <p><strong>Important Attributes:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><code class="inline-code">src</code> - Path ng image - required</li>
+                <li><code class="inline-code">alt</code> - Description para sa accessibility - required</li>
+                <li><code class="inline-code">width/height</code> - Size ng image</li>
+            </ul>
+            <p><strong>CSS Properties:</strong> <code class="inline-code">width</code>, <code class="inline-code">height</code>, <code class="inline-code">object-fit: cover</code>, <code class="inline-code">border-radius</code></p>
+        </section>
+
+        <!-- ANCHORS -->
+        <section>
+            <h2>4. Links/Anchors <span class="badge">&lt;a&gt;</span></h2>
+            <p>Ginagamit para sa hyperlinks papunta sa ibang page or section.</p>
+            <pre><code>&lt;a href="https://google.com" target="_blank"&gt;Visit Google&lt;/a&gt;
+&lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt;</code></pre>
+            <p><strong>Attributes:</strong> <code class="inline-code">href</code> - URL, <code class="inline-code">target="_blank"</code> - open sa new tab</p>
+            <p><strong>Demo:</strong> <a href="#">This is a link</a></p>
+        </section>
+
+        <!-- DISPLAY TYPES -->
+        <section>
+            <h2>5. Display Types <span class="badge">block | inline-block</span></h2>
+            <p>Ito yung pinaka-important sa CSS layout!</p>
+            
+            <h3>display: block</h3>
+            <p>Tumatakbo sa buong width, may sariling line. Example: <code class="inline-code">&lt;div&gt;</code>, <code class="inline-code">&lt;p&gt;</code>, <code class="inline-code">&lt;h1&gt;</code></p>
+            <div class="display-demo">
+                <div class="block-box">Block 1 - Full width</div>
+                <div class="block-box">Block 2 - Nasa baba kasi block</div>
+            </div>
+
+            <h3>display: inline</h3>
+            <p>Tumatabi lang, walang width/height. Example: <code class="inline-code">&lt;span&gt;</code>, <code class="inline-code">&lt;a&gt;</code>, <code class="inline-code">&lt;strong&gt;</code></p>
+            <div class="display-demo">
+                <span class="inline-box">Inline 1</span>
+                <span class="inline-box">Inline 2</span>
+                <span class="inline-box">Inline 3 - Nakatabi lahat</span>
+            </div>
+
+            <h3>display: inline-block</h3>
+            <p>Best of both worlds! Nakatabi pero pwede lagyan ng width/height.</p>
+            <div class="display-demo">
+                <div class="inline-block-box">Box 1</div>
+                <div class="inline-block-box">Box 2</div>
+                <div class="inline-block-box">Box 3</div>
+            </div>
+        </section>
+
+        <!-- FLEXBOX -->
+        <section>
+            <h2>6. Flexbox <span class="badge">display: flex</span></h2>
+            <p>Pinakamadaling way para mag-layout ng items in 1 dimension - row or column.</p>
+            <pre><code>.container {
+  display: flex;              /* I-activate ang flexbox */
+  justify-content: center;    /* Center horizontally */
+  align-items: center;        /* Center vertically */
+  gap: 10px;                  /* Space between items */
+}
+
+.item {
+  flex: 1;                    /* Equal width lahat */
+}</code></pre>
+            
+            <h3>Demo: Equal Width Boxes</h3>
+            <div class="flex-container">
+                <div class="flex-item">Box 1</div>
+                <div class="flex-item">Box 2</div>
+                <div class="flex-item">Box 3</div>
+            </div>
+
+            <p><strong>Important Flex Properties:</strong></p>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Values</th>
+                    <th>Use</th>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">justify-content</code></td>
+                    <td>flex-start, center, space-between, space-around</td>
+                    <td>Horizontal alignment</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">align-items</code></td>
+                    <td>flex-start, center, stretch, flex-end</td>
+                    <td>Vertical alignment</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">flex-direction</code></td>
+                    <td>row, column, row-reverse</td>
+                    <td>Direction ng items</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">gap</code></td>
+                    <td>10px, 1rem</td>
+                    <td>Space between items</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- GRID -->
+        <section>
+            <h2>7. CSS Grid <span class="badge">display: grid</span></h2>
+            <p>For 2D layouts - rows AND columns. Mas powerful sa flexbox for complex layouts.</p>
+            <pre><code>.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  gap: 10px;                               /* Space between items */
+}</code></pre>
+            
+            <h3>Demo: 3-Column Grid</h3>
+            <div class="grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+            </div>
+
+            <p><strong>Important Grid Properties:</strong></p>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>Example</th>
+                    <th>Use</th>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">grid-template-columns</code></td>
+                    <td>200px 1fr 2fr</td>
+                    <td>Define column sizes</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">grid-template-rows</code></td>
+                    <td>100px auto</td>
+                    <td>Define row sizes</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">repeat()</code></td>
+                    <td>repeat(3, 1fr)</td>
+                    <td>3 columns na equal</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">gap</code></td>
+                    <td>20px</td>
+                    <td>Space between grid items</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- FORMS -->
+        <section>
+            <h2>8. Forms <span class="badge">&lt;form&gt;</span></h2>
+            <p>Para sa user input - login, signup, contact forms, etc.</p>
+            <pre><code>&lt;form&gt;
+  &lt;input type="text" placeholder="Name"&gt;
+  &lt;input type="email" placeholder="Email"&gt;
+  &lt;textarea placeholder="Message"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            
+            <h3>Demo Form:</h3>
+            <div class="form-demo">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+                <textarea rows="3" placeholder="Your Message"></textarea>
+                <button type="submit">Submit Form</button>
+            </div>
+
+            <p><strong>Input Types:</strong> <code class="inline-code">text</code>, <code class="inline-code">email</code>, <code class="inline-code">password</code>, <code class="inline-code">number</code>, <code class="inline-code">checkbox</code>, <code class="inline-code">radio</code>, <code class="inline-code">date</code></p>
+        </section>
+
+        <!-- COLORS -->
+        <section>
+            <h2>9. CSS Colors <span class="badge">hex | rgb | rgba | names</span></h2>
+            <p>Iba't ibang ways para mag-set ng colors sa CSS.</p>
+            
+            <h3>Color Methods:</h3>
+            <pre><code>color: red;                  /* Color name */
+color: #CE1126;             /* Hex - pinaka-common */
+color: rgb(59, 130, 246);   /* RGB - Red Green Blue */
+color: rgba(139, 92, 246, 0.7); /* RGBA - with transparency */</code></pre>
+            
+            <h3>Demo Colors:</h3>
+            <div class="color-grid">
+                <div class="color-box red">red</div>
+                <div class="color-box blue">blue</div>
+                <div class="color-box green">green</div>
+                <div class="color-box yellow">yellow</div>
+                <div class="color-box purple">purple</div>
+                <div class="color-box hex">#CE1126</div>
+                <div class="color-box rgb">rgb()</div>
+                <div class="color-box rgba">rgba()</div>
+            </div>
+        </section>
+
+        <!-- POSITIONING -->
+        <section>
+            <h2>10. Positioning <span class="badge">relative | absolute | fixed</span></h2>
+            <p>Para i-control kung saan lalabas yung elements sa page.</p>
+            <pre><code>.parent {
+  position: relative;  /* Reference point */
+}
+
+.child {
+  position: absolute;  /* Positioned base sa parent */
+  top: 20px;
+  left: 50px;
+}
+
+.fixed-header {
+  position: fixed;     /* Stays sa screen kahit mag-scroll */
+  top: 0;
+}</code></pre>
+            
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Behavior</th>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">static</code></td>
+                    <td>Default - normal flow</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">relative</code></td>
+                    <td>Relative sa original position niya</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">absolute</code></td>
+                    <td>Relative sa nearest positioned parent</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">fixed</code></td>
+                    <td>Relative sa viewport - di gumagalaw pag scroll</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">sticky</code></td>
+                    <td>Combination ng relative at fixed</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- BOX MODEL -->
+        <section>
+            <h2>11. Box Model <span class="badge">margin | padding | border</span></h2>
+            <p>Lahat ng HTML element ay box. May 4 parts:</p>
+            <pre><code>.box {
+  margin: 20px;      /* Space sa labas ng border */
+  border: 2px solid; /* Border mismo */
+  padding: 15px;     /* Space sa loob ng border */
+  width: 200px;      /* Content width */
+}</code></pre>
+            <p><strong>Tip:</strong> Gamitin mo lagi <code class="inline-code">box-sizing: border-box;</code> para kasama na yung padding at border sa width calculation.</p>
+        </section>
+
+        <!-- TRANSFORM PLAYGROUND -->
+        <section>
+            <h2>12. Transform - Rotate <span class="badge">NEW! 🎮</span></h2>
+            <p>Gamitin mo yung slider para paikutin yung box at makita mo yung angle in degrees!</p>
+            <pre><code>transform: rotate(45deg);     /* Paikutin ng 45 degrees */
+transform: scale(1.5);        /* Palakihin ng 1.5x */
+transform: translateX(50px);  /* Ilipat 50px sa kanan */
+transform: skew(10deg);       /* I-skew/tupi ng 10 degrees */</code></pre>
+
+            <div class="playground">
+                <div class="demo-box" id="rotateBox">ROTATE ME</div>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <label>🔄 Rotation Angle</label>
+                        <input type="range" id="rotateSlider" min="0" max="360" value="0">
+                        <div class="value-display" id="rotateValue">0deg</div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>📏 Scale Size</label>
+                        <input type="range" id="scaleSlider" min="0.5" max="2" step="0.1" value="1">
+                        <div class="value-display" id="scaleValue">1x</div>
+                    </div>
+                </div>
+
+                <div class="code-output" id="transformCode">
+                    transform: rotate(0deg) scale(1);
+                </div>
+            </div>
+        </section>
+
+        <!-- BOX SHADOW PLAYGROUND -->
+        <section>
+            <h2>13. Box Shadow <span class="badge">NEW! 🎨</span></h2>
+            <p>Control mo yung shadow gamit sliders - offset, blur, at spread!</p>
+            <pre><code>box-shadow: 10px 10px 20px 5px rgba(0,0,0,0.3);
+/*           X    Y    Blur  Spread Color */</code></pre>
+
+            <div class="playground">
+                <div class="demo-box" id="shadowBox" style="background: #3b82f6;">SHADOW</div>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <label>↔ Horizontal Offset (X)</label>
+                        <input type="range" id="shadowX" min="-50" max="50" value="10">
+                        <div class="value-display" id="shadowXValue">10px</div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>↕ Vertical Offset (Y)</label>
+                        <input type="range" id="shadowY" min="-50" max="50" value="10">
+                        <div class="value-display" id="shadowYValue">10px</div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>🌫 Blur Radius</label>
+                        <input type="range" id="shadowBlur" min="0" max="50" value="20">
+                        <div class="value-display" id="shadowBlurValue">20px</div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>📏 Spread Radius</label>
+                        <input type="range" id="shadowSpread" min="-20" max="30" value="0">
+                        <div class="value-display" id="shadowSpreadValue">0px</div>
+                    </div>
+                </div>
+
+                <div class="code-output" id="shadowCode">
+                    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.5);
+                </div>
+            </div>
+        </section>
+
+        <!-- COLOR PICKER TOOL -->
+        <section>
+            <h2>14. Interactive Color Picker <span class="badge">NEW! 🎨</span></h2>
+            <p>Pili ka ng color at makikita mo agad yung CSS code para sa text, background, border, at shadow!</p>
+
+            <div class="color-picker-widget">
+                <div class="color-picker-header">Color Picker 🎨</div>
+                
+                <div class="color-picker-row">
+                    <input type="text" class="color-display" id="hexDisplay" value="CE5937" readonly>
+                    <input type="range" class="color-slider" id="opacitySlider" min="0" max="1" step="0.01" value="1">
+                    <span class="opacity-value" id="opacityValue">1</span>
+                </div>
+
+                <div class="color-inputs">
+                    <input type="text" id="colorInput" value="color: #CE5937;" readonly>
+                    <button class="color-label active" data-type="text">Text color</button>
+                </div>
+
+                <div class="color-inputs">
+                    <input type="text" id="bgInput" value="background-color:#CE5937;" readonly>
+                    <button class="color-label active" data-type="bg">Background</button>
+                </div>
+
+                <div class="color-inputs">
+                    <input type="text" id="borderInput" value="border: 3px solid #CE5937;" readonly>
+                    <button class="color-label" data-type="border">Box border</button>
+                </div>
+
+                <div class="color-inputs">
+                    <input type="text" id="textShadowInput" value="text-shadow: 1px 2px 2px #CE5937;" readonly>
+                    <button class="color-label" data-type="textshadow">Text shadow</button>
+                </div>
+
+                <div class="color-inputs">
+                    <input type="text" id="boxShadowInput" value="box-shadow: 2px 2px 7px 1px #CE5937;" readonly>
+                    <button class="color-label" data-type="boxshadow">Box shadow</button>
+                </div>
+
+                <div class="palette-grid" id="paletteGrid"></div>
+            </div>
+        </section>
+
+        <!-- The Structure of HTML -->
+        <!-- HTML5 PAGE STRUCTURE -->
+        <section>
+            <h2>15. HTML5 Page Structure <span class="badge">NEW!</span></h2>
+            <p>Ito yung standard structure ng modern HTML5 pages. Gamitin mo 'to para semantic at SEO-friendly yung code mo.</p>
+            
+            <h3>Basic HTML5 Template:</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;!-- Navigation links dito --&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h1&gt;Main Content&lt;/h1&gt;
+            &lt;article&gt;
+                &lt;!-- Blog post or main article --&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;aside&gt;
+            &lt;!-- Sidebar content --&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2026 Your Site&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <h3>HTML5 Semantic Tags:</h3>
+            <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Purpose</th>
+                    <th>Kailan Gamitin</th>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;header&gt;</code></td>
+                    <td>Intro content</td>
+                    <td>Logo, nav, search bar sa taas ng page</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;nav&gt;</code></td>
+                    <td>Navigation links</td>
+                    <td>Main menu, breadcrumb, pagination</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;main&gt;</code></td>
+                    <td>Main content</td>
+                    <td>Unique content ng page - isa lang per page</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;section&gt;</code></td>
+                    <td>Thematic grouping</td>
+                    <td>Chapters, tabs, or grouped content</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;article&gt;</code></td>
+                    <td>Self-contained content</td>
+                    <td>Blog posts, news articles, comments</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;aside&gt;</code></td>
+                    <td>Sidebar content</td>
+                    <td>Related links, ads, author bio</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;footer&gt;</code></td>
+                    <td>Footer info</td>
+                    <td>Copyright, contact, social links</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">&lt;figure&gt;</code></td>
+                    <td>Media with caption</td>
+                    <td>Images, diagrams with <code class="inline-code">&lt;figcaption&gt;</code></td>
+                </tr>
+            </table>
+
+            <h3>Why Use Semantic Tags?</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>SEO:</strong> Mas maintindihan ng Google yung content mo</li>
+                <li><strong>Accessibility:</strong> Screen readers alam kung ano yung nav, main, etc.</li>
+                <li><strong>Maintainability:</strong> Mas malinis tignan kaysa puro <code class="inline-code">&lt;div&gt;</code></li>
+                <li><strong>Standard:</strong> Best practice na 'to sa 2026</li>
+            </ul>
+
+            <div class="code-output" style="margin-top: 20px;">
+                <strong>💡 Tip:</strong> Wag ka na gumamit ng <code class="inline-code">&lt;div id="header"&gt;</code> — gamitin mo na <code class="inline-code">&lt;header&gt;</code> mismo!
+            </div>
+        </section>
+
+        <!--CSS Float Section-->
+        <!-- CSS FLOAT -->
+        <section>
+            <h2>16. CSS Float <span class="badge">INTERACTIVE!</span></h2>
+            <p>Ginagamit para i-float yung element sa left or right, tapos yung text mag-wrap sa paligid. Old-school layout technique pero useful pa rin sa mga specific cases!</p>
+            
+            <h3>CSS Float Values:</h3>
+            <table>
+                <tr>
+                    <th>Value</th>
+                    <th>Behavior</th>
+                    <th>Use Case</th>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">left</code></td>
+                    <td>Float sa kaliwa, text sa kanan</td>
+                    <td>Image na nasa left side ng paragraph</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">right</code></td>
+                    <td>Float sa kanan, text sa kaliwa</td>
+                    <td>Sidebar, ad box sa right</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">none</code></td>
+                    <td>Default - walang float</td>
+                    <td>I-reset yung float</td>
+                </tr>
+                <tr>
+                    <td><code class="inline-code">inherit</code></td>
+                    <td>Manahin sa parent</td>
+                    <td>Kapag gusto mo same sa parent element</td>
+                </tr>
+            </table>
+
+            <h3>Interactive Demo:</h3>
+            <div class="float-playground">
+                <div class="float-controls">
+                    <label>🎯 Float Value:</label>
+                    <select id="floatSelect">
+                        <option value="none">none (default)</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="inherit">inherit</option>
+                    </select>
+                    <button class="color-label" id="clearFloatBtn" style="margin-left: auto;">Clear Float</button>
+                </div>
+
+                <div class="float-demo-area" id="floatDemoArea">
+                    <div class="float-box" id="floatBox">FLOAT BOX</div>
+                    <p class="float-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nemo neque laborum praesentium illo, hic harum veniam laudantium nam ipsa quas placeat impedit minus perspiciatis, dolorem voluptatem quo, vero provident porro officiis dolorum minima facilis molestiae dolores! Eligendi nam quas quos animi culpa nihil. Commodi adipisci mollitia quisquam? Nihil eos architecto odit libero dicta. Quibusdam quas reprehenderit explicabo repudiandae possimus modi dolorum ea corrupti ipsam blanditiis, nam est ducimus debitis eligendi incidunt. Sequi sunt dolorem sint illo? Eum quos possimus recusandae doloribus ab temporibus iste nulla nesciunt, hic voluptatem totam rerum. Reprehenderit architecto consequatur in exercitationem dolorem officia minus velit!
+                    </p>
+                    <div class="float-clear" id="clearDiv" style="display: none;">
+                        ⚠️ This div has <code class="inline-code">clear: both</code> - tumigil na yung float dito
+                    </div>
+                </div>
+
+                <div class="code-output" id="floatCode">
+                    .box { float: none; }
+                </div>
+            </div>
+
+            <h3>Important Notes:</h3>
+            <ul style="margin-left: 20px;">
+                <li><strong>Problem:</strong> Kapag nag-float ka, yung parent minsan nagko-collapse yung height</li>
+                <li><strong>Solution:</strong> Gamitin mo <code class="inline-code">clear: both</code> or <code class="inline-code">overflow: hidden</code> sa parent</li>
+                <li><strong>Modern Alternative:</strong> Flexbox at Grid na yung ginagamit ngayon 99% of the time</li>
+                <li><strong>When to Use:</strong> Text wrapping around images lang talaga yung legit use case ngayon</li>
+            </ul>
+
+            <pre><code>/* Basic float example */
+.image {
+  float: left;          /* I-float sa kaliwa */
+  margin: 0 15px 15px 0; /* Space sa right at bottom */
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;          /* I-clear yung float */
+}</code></pre>
+        </section>
+    </div>
+    <script src="./script.js"></script>
+<body>
+</html>
