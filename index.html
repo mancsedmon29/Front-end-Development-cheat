@@ -638,6 +638,88 @@ transform: skew(10deg);       /* I-skew/tupi ng 10 degrees */</code></pre>
   clear: both;          /* I-clear yung float */
 }</code></pre>
         </section>
+
+        <!-- CSS DISPLAY INTERACTIVE -->
+        <section>
+            <h2>17. CSS Display - Interactive <span class="badge">PLAYGROUND! 🎮</span></h2>
+            <p>I-try mo mismo yung difference ng <code class="inline-code">block</code>, <code class="inline-code">inline</code>, at <code class="inline-code">inline-block</code>. Palitan mo yung dropdown para makita mo yung behavior!</p>
+
+            <div class="display-playground">
+                <div class="display-controls">
+                    <label>🎯 Display Value:</label>
+                    <select id="displaySelect">
+                        <option value="block">block</option>
+                        <option value="inline">inline</option>
+                        <option value="inline-block">inline-block</option>
+                        <option value="none">none</option>
+                        <option value="flex">flex</option>
+                        <option value="grid">grid</option>
+                    </select>
+                    <button class="color-label" id="addElementBtn">+ Add Element</button>
+                    <button class="color-label" id="resetDisplayBtn">Reset</button>
+                </div>
+
+                <div class="display-demo-area">
+                    <div class="display-parent" id="displayParent">
+                        <div class="display-element">Box 1</div>
+                        <div class="display-element">Box 2</div>
+                        <div class="display-element">Box 3</div>
+                    </div>
+                </div>
+
+                <div class="display-info" id="displayInfo">
+                    <strong>display: block</strong> - Tumatakbo sa buong width, may sariling line. Pwede lagyan ng width/height, margin, padding. Example: div, p, h1
+                </div>
+
+                <div class="code-output" id="displayCode">
+                   .element { display: block; }
+                </div>
+            </div>
+
+            <h3>Quick Comparison:</h3>
+            <table>
+                <tr>
+                    <th>Property</th>
+                    <th>block</th>
+                    <th>inline</th>
+                    <th>inline-block</th>
+                </tr>
+                <tr>
+                    <td>Tumatabi ba?</td>
+                    <td>❌ Hindi</td>
+                    <td>✅ Oo</td>
+                    <td>✅ Oo</td>
+                </tr>
+                <tr>
+                    <td>Pwede width/height?</td>
+                    <td>✅ Oo</td>
+                    <td>❌ Hindi</td>
+                    <td>✅ Oo</td>
+                </tr>
+                <tr>
+                    <td>Pwede margin top/bottom?</td>
+                    <td>✅ Oo</td>
+                    <td>❌ Hindi</td>
+                    <td>✅ Oo</td>
+                </tr>
+                <tr>
+                    <td>Full width by default?</td>
+                    <td>✅ Oo</td>
+                    <td>❌ Hindi</td>
+                    <td>❌ Hindi</td>
+                </tr>
+                <tr>
+                    <td>Example tags</td>
+                    <td>div, p, h1</td>
+                    <td>span, a, strong</td>
+                    <td>button, img</td>
+                </tr>
+            </table>
+
+            <div class="code-output" style="margin-top: 20px;">
+                <strong>💡 Pro Tip:</strong> Gamitin mo <code class="inline-code">inline-block</code> kapag gusto mo tumabi yung elements pero kelangan mo pa rin ng width/height. Perfect for navigation menus!
+            </div>
+        </section>
     </div>
     <script src="./script.js"></script>
 <body>
