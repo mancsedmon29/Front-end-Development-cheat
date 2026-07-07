@@ -175,10 +175,80 @@
             clearFloatBtn.classList.remove('active');
         }
     });
-        
 
+    // Display Playground Controls
+    const displaySelect = document.getElementById('displaySelect');
+    const displayParent = document.getElementById('displayParent');
+    const displayInfo = document.getElementById('displayInfo');
+    const displayCode = document.getElementById('displayCode');
+    const addElementBtn = document.getElementById('addElementBtn');
+    const resetDisplayBtn = document.getElementById('resetDisplayBtn');
+    let elementCount = 3;
+
+    const displayDescriptions = {
+        'block': '<strong>display: block</strong> - Tumatakbo sa buong width, may sariling line. Pwede lagyan ng width/height, margin, padding. Example: div, p, h1',
+        'inline': '<strong>display: inline</strong> - Tumatabi lang, walang width/height. Hindi pwede lagyan ng margin top/bottom. Example: span, a, strong',
+        'inline-block': '<strong>display: inline-block</strong> - Best of both! Tumatabi PERO pwede lagyan ng width/height at full margin/padding. Example: button, img',
+        'none': '<strong>display: none</strong> - Mawawala completely sa page, parang di nag-exist. Hindi lang invisible — removed sa layout!',
+        'flex': '<strong>display: flex</strong> - Parent becomes flex container. Anak magiging flex items na naka-row by default.',
+        'grid': '<strong>display: grid</strong> - Parent becomes grid container. Anak magiging grid items na naka-auto-flow.'
+    };
+
+    function updateDisplay() {
+        const displayValue = displaySelect.value;
+        const elements = displayParent.querySelectorAll('.display-element');
+
+        if (displayValue === 'flex' || displayValue === 'grid') {
+            displayParent.style.display = displayValue;
+            if (displayValue === 'grid') {
+                displayParent.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                displayParent.style.gap = '10px';
+            } else {
+                displayParent.style.gap = '10px';
+            }
+            elements.forEach(el => {
+                el.style.display = 'block';
+            });
+        } else {
+            displayParent.style.display = 'block';
+            displayParent.style.gridTemplateColumns = '';
+            displayParent.style.gap = '';
+            elements.forEach(el => {
+                el.style.display = displayValue;
+            });
+        }
+
+        displayInfo.innerHTML = displayDescriptions[displayValue];
+        displayCode.textContent = `.element { display: ${displayValue}; }`;
+    }
+
+    displaySelect.addEventListener('change', updateDisplay);
+
+    addElementBtn.addEventListener('click', () => {
+        elementCount++;
+        const newBox = document.createElement('div');
+        newBox.className = 'display-element';
+        newBox.textContent = `Box ${elementCount}`;
+        newBox.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`;
+        displayParent.appendChild(newBox);
+        updateDisplay();
+    });
+
+    resetDisplayBtn.addEventListener('click', () => {
+        displayParent.innerHTML = `
+            <div class="display-element">Box 1</div>
+            <div class="display-element">Box 2</div>
+            <div class="display-element">Box 3</div>
+        `;
+        elementCount = 3;
+        displaySelect.value = 'block';
+        updateDisplay();
+    });
+        
+        
     // Initialize lahat
     updateTransform();
     updateShadow();
     updateColorPicker('#CE5937', 1);
     updateFloat();
+    updateDisplay();
